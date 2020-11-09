@@ -1,0 +1,82 @@
+<html>
+<head>
+
+<meta name="GENERATOR" content="Namo WebEditor(Trial)">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<title>오즈 냥냥</title>
+<style>
+body {
+background-color:#fcfbf7;
+font-family:'777Balsamtint'
+}
+
+@font-face { font-family: '777Balsamtint'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_nine_@1.1/777Balsamtint.woff') format('woff'); font-weight: normal; font-style: normal; }
+</style>
+<script>
+/*시간에 따라 오즈 행동 사진 변경하기*/
+	var hour = function() {
+	
+		var fname ="";
+		var today =new Date();
+		var hh = today.getHours();
+		if((hh>=5 && hh<6)|| (hh>=13&&hh<14))
+		{
+			fname="images/time_snack.PNG";
+		}
+		else if((hh>=6&&hh<7) || (hh>=19&&hh<=23) || (hh>=0&&hh<1)){
+			fname="images/time_fun.PNG";
+		}
+		else
+		{
+			fname="images/time_sleep.PNG";
+		}
+		
+		document.getElementById("time").src=fname;
+	}
+	
+</script>
+
+</head><body onload="hour();">
+
+<table border="0" width="1100" height="347" cellspacing="0" cellpadding="0">
+    <tr>
+        <td width="750" height="244"><font size="5"><b></b></font>            <p><img src="images/banner.png" width="1100" height="249" border="0"></p>
+</td>
+    </tr>
+    <tr>
+        <td width="1102">
+<img src="images/nav2.png" width="1100" height="89" border="0" usemap="#ImageMap1"></td>
+    </tr>
+</table>
+<TABLE width="1100" border=0 height="322">
+
+    <TR>
+        <TD width=570 height="318">
+		
+            <div style="line-height:1px;">
+                <p align="left">&nbsp;
+                                                <P>&nbsp;</P>
+                <h1 align="right" style="font-size:50px;margin-right:100px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;오즈의 하루 일과표</h1>
+                <hr width="250" color="#FF9999" size="4" align="right" style="margin-right:110px">
+                <P><img src="images/timetable.png" width="600" height="446" border="0"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img id="time" src="" width="433" height="239" border="0"></P>
+                <P>&nbsp;</P>
+                <P>&nbsp;</P>
+                <P>&nbsp;</P>
+                <P>&nbsp;</P>
+                <div>
+                                </TD>
+    </TR>
+</TABLE>
+
+<TABLE width="1100" border=0 height="130">
+
+<TR>
+<TD width=750 height="126" style="background-color:#ff9999">
+&nbsp;</TD></TR></TABLE>
+<map name="ImageMap1">
+<area shape="rect" coords="5, 4, 218, 83" href="index.htm">
+<area shape="rect" coords="427, 5, 656, 82" href="picture.htm">
+<area shape="rect" coords="665, 5, 874, 82" href="video.htm">
+<area shape="rect" coords="883, 6, 1094, 83" href="calendar.htm">
+</map></body>
+</html> 

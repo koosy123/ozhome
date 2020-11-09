@@ -1,0 +1,181 @@
+<html>
+<head>
+
+<meta name="GENERATOR" content="Namo WebEditor(Trial)">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<title>오즈 냥냥</title>
+<script language="javascript">
+    var today = new Date(); // 오늘 날짜
+    var date = new Date();
+	var birth=0;
+	var hos=0;
+ 
+    function beforem() //이전 달을 today에 값을 저장
+    { 
+        today = new Date(today.getFullYear(), today.getMonth() - 1, today.getDate());
+        build(); //만들기
+    }
+    
+    function nextm()  //다음 달을 today에 저장
+    {
+        today = new Date(today.getFullYear(), today.getMonth() + 1, today.getDate());
+        build();
+    }
+    
+    function build()
+    {
+        var nMonth = new Date(today.getFullYear(), today.getMonth(), 1); //현재달의 첫째 날
+        var lastDate = new Date(today.getFullYear(), today.getMonth() + 1, 0); //현재 달의 마지막 날
+        var tbcal = document.getElementById("calendar"); // 테이블 달력을 만들 테이블
+        var yearmonth = document.getElementById("yearmonth"); //  년도와 월 출력할곳
+        yearmonth.innerHTML = today.getFullYear() + "년 "+ (today.getMonth() + 1) + "월"; //년도와 월 출력
+        
+        if(today.getMonth()+1==12) //  눌렀을 때 월이 넘어가는 곳
+        {
+            before.innerHTML="❮";
+            next.innerHTML="❯";
+        }
+        else if(today.getMonth()+1==1) //  1월 일 때
+        {
+            before.innerHTML="❮";
+            next.innerHTML="❯";
+        }
+        else //   12월 일 때
+        {
+           
+            before.innerHTML="❮";
+            next.innerHTML="❯";
+        }
+		if(today.getMonth()+1==8){
+			birth=1;
+		}
+		else{
+		 birth=0;
+		}
+		if(today.getMonth()+1==1){
+			hos=1;
+		}
+		else{
+		 hos=0;
+		}
+        
+       
+        // 남은 테이블 줄 삭제
+        while (tbcal.rows.length > 2) 
+        {
+            tbcal.deleteRow(tbcal.rows.length - 1);
+        }
+        var row = null;
+        row = tbcal.insertRow();
+        var cnt = 0;
+ 
+        // 1일 시작칸 찾기
+        for (i = 0; i < nMonth.getDay(); i++) 
+        {
+            cell = row.insertCell();
+            cnt = cnt + 1;
+        }
+ 
+        // 달력 출력
+        for (i = 1; i <= lastDate.getDate(); i++) // 1일부터 마지막 일까지
+        { 
+            cell = row.insertCell();
+            cell.innerHTML = i;
+            cnt = cnt + 1;
+            if (cnt % 7 == 1) {//일요일 계산
+                cell.innerHTML = "<font color=#FF9090>" + i//일요일에 색
+            }
+			if(birth==1&&i==25){
+				cell.innerHTML = "<font color=#ff00c3>" + i + "<br/> <font size=5><strong>오즈생일</strong>"
+			}
+			if(hos==1&&i==15&&today.getFullYear()==2020){
+				cell.innerHTML = "<font color=#ff00c3>" + i + "<br/> <font size=5>중성화 수술"
+			}
+            if (cnt % 7 == 0) { // 1주일이 7일 이므로 토요일 계산
+                cell.innerHTML = "<font color=#df96ff>" + i //토요일에 색
+                row = calendar.insertRow();// 줄 추가
+            }
+            if(today.getFullYear()==date.getFullYear()&&today.getMonth()==date.getMonth()&&i==date.getDate()) 
+            {
+                cell.bgColor = "#ccfff8"; //오늘날짜배경색
+            }
+        }
+ 
+    }
+    
+</script>
+ <style>
+body {
+background-color:#fcfbf7;
+font-family:'777Balsamtint';
+}
+@font-face { font-family: '777Balsamtint'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_nine_@1.1/777Balsamtint.woff') format('woff'); font-weight: normal; font-style: normal; }
+</style>
+</head><body onload="build();">
+
+<table border="0" width="1100" height="347" cellspacing="0" cellpadding="0">
+    <tr>
+        <td width="750" height="244"><font size="5"><b></b></font>            <p><img src="images/banner.png" width="1100" height="249" border="0"></p>
+</td>
+    </tr>
+    <tr>
+        <td width="1102">
+<img src="images/nav5.png" width="1100" height="89" border="0" usemap="#ImageMap1"></td>
+    </tr>
+</table>
+<TABLE width="1100" border="0" height="130">
+<br/>
+<br/>
+<br/>
+<div>
+     <table id="calendar" style="margin:50px 0px">
+        <tr style="background-color:#ffc9c9" id="mon">
+            <td colspan="7"><font color="#777777"><label onclick="beforem()" id="before"></label></font>   
+            <font size="200%"><label id="yearmonth"></label></font>   
+            <font color="#777777"><label onclick="nextm()" id="next"></label></font></td>
+        </tr>
+        <tr>
+            <td align="center"> <font color="#FF9090">일</font></td>
+            <td align="center"> 월 </td>
+            <td align="center"> 화 </td>
+            <td align="center"> 수 </td>
+            <td align="center"> 목 </td>
+            <td align="center"> 금 </td>
+            <td align="center"><font color=#df96ff>토</font></td>
+        </tr>
+    </table>
+	</div>
+</TABLE>
+
+<TABLE width="1100" border=0 height="130">
+
+<TR>
+<TD width=750 height="126" style="background-color:#ff9999">
+&nbsp;</TD></TR></TABLE>
+<map name="ImageMap1">
+<area shape="rect" coords="6, 6, 217, 80" href="index.htm">
+<area shape="rect" coords="226, 6, 417, 81" href="timetable.htm">
+<area shape="rect" coords="425, 6, 656, 82" href="picture.htm">
+<area shape="rect" coords="662, 4, 875, 84" href="video.htm">
+</map>
+<style>
+#calendar
+    {
+        border:1px solid #ff9999;
+        text-align:center;
+		font-size:40px;
+		width:1100px;
+		height:700px;
+   		table-layout: fixed;
+        
+    }
+#calendar tr,td
+    {
+        border:1px solid #ff9999;
+        vertical-align: middle;
+    }
+#before, #next{
+font-size: 30px}
+</style>
+</body>
+</html> 

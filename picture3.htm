@@ -1,0 +1,199 @@
+<html>
+<head>
+
+<meta name="GENERATOR" content="Namo WebEditor(Trial)">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<title>오즈 냥냥</title>
+<style>
+body {
+background-color:#fcfbf7;
+font-family:'777Balsamtint';
+}
+
+@font-face { font-family: '777Balsamtint'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_nine_@1.1/777Balsamtint.woff') format('woff'); font-weight: normal; font-style: normal; }
+
+.pic {
+font-family:'777Balsamtint';
+font-size:50px;
+margin-left:30px;
+}
+
+a{
+text-decoration:none;
+color:black;
+}
+
+.pic:hover{
+ color:#ffc9c9;
+}
+
+* {box-sizing: border-box}
+body {font-family: Verdana, sans-serif; margin:0}
+.mySlides {display: none}
+img {vertical-align: middle;}
+.mySlides img{filter: drop-shadow(5px 5px 5px #000);}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: 50px 50px 0px 100px;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+
+/* The dots/bullets/indicators */
+
+
+.active {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px}
+}
+</style>
+
+</head><body>
+
+<table border="0" width="1100" height="347" cellspacing="0" cellpadding="0">
+    <tr>
+        <td width="750" height="244"><font size="5"><b></b></font>            <p><img src="images/banner.png" width="1100" height="249" border="0"></p>
+</td>
+    </tr>
+    <tr>
+        <td width="1102">
+<img src="images/nav3.png" width="1100" height="89" border="0" usemap="#ImageMap1"></td>
+    </tr>
+</table>
+<TABLE width="1100" border=0 height="322">
+
+    <TR>
+        <TD width="260" height="318">
+		
+            <div style="line-height:10px;">
+                <a href="picture.htm"><h1 align="center" class="pic">전신 오즈</h1></a>
+                    <p align="center">&nbsp;</p>
+                    <a href="picture2.htm"><h1 align="center" class="pic">어릴적 오즈</h1></a>
+                        <p align="center">&nbsp;</p>
+                        <h1 align="center" class="pic" style="color:#ff9999">잠자는 오즈</h1>
+                            <p align="center">&nbsp;</p>
+                            <a href="picture4.htm"><h1 align="center" class="pic">오즈 발바닥</h1></a>
+                                <div>
+                                </TD>
+        <td width="830" height="318">
+            <div class="slideshow-container">
+
+                <div class="mySlides fade">
+                    <p>&nbsp;</p>
+                    <p><img src="images/pic3_oz1.jpg" width="100%">
+</p>
+                </div>
+<div class="mySlides fade">
+  
+  <img src="images/pic3_oz2.jpg" width="100%">
+</div>
+
+<div class="mySlides fade">
+  
+  <img src="images/pic3_oz3.jpg" width="100%">
+</div>
+
+<a class="prev" onclick="plusSlides(-1)">❮</a>
+<a class="next" onclick="plusSlides(1)">❯</a>
+
+</div>
+            <p><br>
+</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+
+        </td>
+    </TR>
+</TABLE>
+
+<TABLE width="1100" border=0 height="130">
+
+<TR>
+<TD width=750 height="126" style="background-color:#ff9999">
+&nbsp;</TD></TR></TABLE>
+<map name="ImageMap1">
+<area shape="rect" coords="4, 4, 219, 84" href="index.htm">
+<area shape="rect" coords="226, 4, 418, 82" href="timetable.htm">
+<area shape="rect" coords="664, 4, 874, 82" href="video.htm">
+<area shape="rect" coords="882, 3, 1094, 82" href="calendar.htm">
+</map>
+<script>
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.querySelectorAll(".mySlides");
+  var dots = document.querySelectorAll(".dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
+</script>
+</body>
+</html> 
